@@ -1,0 +1,87 @@
+/* Estilos para la tabla de suscripciones de miembros */
+
+/* Estilos para el borde lateral de las columnas fijas */
+.sticky-border::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 2px;
+    background-color: rgba(229, 231, 235, 0.8);
+    z-index: 5;
+}
+
+/* Mejorar la visualización en dispositivos móviles */
+@media (max-width: 640px) {
+    .sticky-border::after {
+        width: 1px;
+    }
+}
+
+/* Estilo para las filas al pasar el ratón */
+tbody tr:hover {
+    background-color: rgba(243, 244, 246, 0.5) !important;
+}
+
+/* Estilos para la barra de desplazamiento */
+div::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+div::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+div::-webkit-scrollbar-thumb {
+    background: #c0c0c0;
+    border-radius: 5px;
+}
+
+div::-webkit-scrollbar-thumb:hover {
+    background: #a0a0a0;
+}
+
+/* Estilos para los encabezados de columna */
+thead th {
+    transition: background-color 0.2s;
+}
+
+thead th:hover {
+    background-color: rgba(107, 114, 128, 0.1);
+}
+
+/* Animación para el indicador de carga */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+/* Estilos para las etiquetas de filtro */
+.filter-tag {
+    display: inline-flex;
+    align-items: center;
+    background-color: #e5e7eb;
+    border-radius: 9999px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.filter-tag button {
+    margin-left: 0.5rem;
+    color: #ef4444;
+}
+
+.filter-tag button:hover {
+    color: #b91c1c;
+}

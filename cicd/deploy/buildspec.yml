@@ -1,0 +1,10 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 20
+      java: corretto21
+  build:
+    commands:
+      - bash cicd/deploy/deploy.sh

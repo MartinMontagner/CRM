@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:alpine
+    container_name: cocreadores_postgres
+    ports:
+      - "8950:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: cocreadores
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+    restart: always
+
+volumes:
+  postgres_data:
+    name: cocreadores_postgres_data
+
+networks:
+  default:
+    name: cocreadores_network

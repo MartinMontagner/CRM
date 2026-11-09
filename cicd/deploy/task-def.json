@@ -1,0 +1,77 @@
+{
+  "family": "cocreadores-backend",
+  "containerDefinitions": [
+    {
+      "name": "app",
+      "image": "484907513804.dkr.ecr.eu-south-2.amazonaws.com/cocreadores-task-image:2025-03-16-23-49-0fffe65",
+      "cpu": 256,
+      "portMappings": [
+        {
+          "name": "app-80-tcp",
+          "containerPort": 80,
+          "hostPort": 80,
+          "protocol": "tcp",
+          "appProtocol": "http"
+        }
+      ],
+      "essential": true,
+      "environment": [
+        {
+          "name": "S3_BUCKET_BACK",
+          "value": "cocreadores-backend"
+        }
+      ],
+      "environmentFiles": [],
+      "mountPoints": [],
+      "volumesFrom": [],
+      "secrets": [
+        {
+          "name": "SECURITY_JWT_SECRET",
+          "valueFrom": "arn:aws:secretsmanager:eu-south-2:484907513804:secret:cocreadores-env-LBni1L:SECURITY_JWT_SECRET::"
+        },
+        {
+          "name": "SECURITY_API_SECRET",
+          "valueFrom": "arn:aws:secretsmanager:eu-south-2:484907513804:secret:cocreadores-env-LBni1L:SECURITY_API_SECRET::"
+        },
+        {
+          "name": "DATABASE_URL",
+          "valueFrom": "arn:aws:secretsmanager:eu-south-2:484907513804:secret:cocreadores-env-LBni1L:DATABASE_URL::"
+        },
+        {
+          "name": "DATABASE_USERNAME",
+          "valueFrom": "arn:aws:secretsmanager:eu-south-2:484907513804:secret:cocreadores-env-LBni1L:DATABASE_USERNAME::"
+        },
+        {
+          "name": "DATABASE_PASSWORD",
+          "valueFrom": "arn:aws:secretsmanager:eu-south-2:484907513804:secret:cocreadores-env-LBni1L:DATABASE_PASSWORD::"
+        }
+      ],
+      "ulimits": [],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/cocreadores-backend",
+          "awslogs-create-group": "true",
+          "awslogs-region": "eu-south-2",
+          "awslogs-stream-prefix": "ecs"
+        },
+        "secretOptions": []
+      },
+      "systemControls": []
+    }
+  ],
+  "taskRoleArn": "arn:aws:iam::484907513804:role/ecsTaskRole",
+  "executionRoleArn": "arn:aws:iam::484907513804:role/ecsTaskExecutionRole",
+  "networkMode": "awsvpc",
+  "volumes": [],
+  "placementConstraints": [],
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "256",
+  "memory": "2048",
+  "runtimePlatform": {
+    "cpuArchitecture": "X86_64",
+    "operatingSystemFamily": "LINUX"
+  }
+}

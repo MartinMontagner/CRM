@@ -1,0 +1,1 @@
+export type ReadStatusType = "ALL" | "READ" | "UNREAD";

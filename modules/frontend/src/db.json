@@ -1,0 +1,19 @@
+{
+    "contacts": [
+      {
+        "id": 1,
+        "name": "Jorge Luis Trejo",
+        "message": "Lorem Ipsum es simplemente el texto de relleno...",
+        "time": "14:45",
+        "avatar": "https://img.freepik.com/foto-gratis/retrato-joven-confiado-gafas_171337-4841.jpg"
+      },
+      {
+        "id": 2,
+        "name": "María González",
+        "message": "Nos vemos más tarde!",
+        "time": "13:30",
+        "avatar": "https://img.freepik.com/foto-gratis/mujer-sonriente-usando-telefono-movil_23-2149188966.jpg"
+      }
+    ]
+  }
+  
